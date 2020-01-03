@@ -14,8 +14,8 @@ var express         =require("express"),
 var commentRoutes       =require("./routes/comments"),
     campgroundRoutes    =require("./routes/campgrounds"),
     indexRoutes         =require("./routes/index");
-
-mongoose.connect(process.env.DATABASEURL,{ useNewUrlParser: true, useUnifiedTopology: true });
+var url=process.env.DATABASEURL || "mongodb://localhost/yelp_camp_1_12";
+mongoose.connect(url,{ useNewUrlParser: true, useUnifiedTopology: true });
 // mongoose.connect("mongodb+srv://Rock2000:rob1998in@yelpcamp-riefq.mongodb.net/test?retryWrites=true&w=majority",{ useNewUrlParser: true, useUnifiedTopology: true });
 
 // PASSPORT CONFIGURATION
